@@ -43,8 +43,8 @@ int main(int argc, char *argv[]) {
     if (*argv[2] == 'm' && argc > 3)
     {
         size_of_str = atoi(argv[3]);
-       // cout << size_of_str << endl;
         char b[size_of_str+100];
+        bzero(b, size_of_str+100);
         b[0] = *argv[2];
         b[1] = '-';
         b[2] = argv[3][0];
@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
         b[4] = '-';
         int a = 0;
         int s = 4;
-        for(int i = 0; i < size_of_str + 2; i++ ){
+        for(int i = 0; i < size_of_str; i++ ){
             if(s < argc){
                 if(a < strlen(argv[s])){
                     if(a != -1){
